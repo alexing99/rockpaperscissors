@@ -11,9 +11,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase ();
     if (playerSelection == "stone" && computerSelection == "paper") {
         return "You Lose! Paper beats Stone";
-    } else if (playerSelection == "Stone" && computerSelection == "scissors") {
+    } else if (playerSelection == "stone" && computerSelection == "scissors") {
         return "You Win! Stone beats Scissors";
     } else if (playerSelection == "paper" && computerSelection == "stone") {
         return "You Win! Paper beats Stone";
@@ -28,8 +29,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "stone"
-const computerSelection = getComputerChoice()
+const playerSelection = "sTone";
+const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
 
