@@ -29,15 +29,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "sTone";
+const playerSelection = prompt("What is your move? Paper, Scissors, or Stone?");
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound 
 
-/* make a case insensitive function that lets a player input p s s */
 
-/* make a return string that that declares winner */
+        return "You win!";
 
-/* paper beats rock rock beats scissors scissors beats paper*/
+    }
+}
+
+
 
 /* makea new function for 5 round games and keeps score then reports the winner at the end*/
