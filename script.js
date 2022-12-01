@@ -46,8 +46,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log (playRound (playerSelection, computerSelection));
-
+console.log(playRound (playerSelection, computerSelection));
 
 function scoreboard() {
     if (playerScore > compScore) {
@@ -58,20 +57,15 @@ function scoreboard() {
         return "Nobody wins!";
     }
 }
+
 function game() {
-    for (let i = 0; i < 5; i++) {
-       getPlayerChoice();
+    for (let i = 1; i < 5; i++) {
        let playerSelection = getPlayerChoice();
-       getComputerChoice();
        let computerSelection = getComputerChoice();
        playRound(playerSelection, computerSelection);
        console.log(playRound (playerSelection, computerSelection));
     }
-    scoreboard();
-}
-console.log(game()); 
-   
+    return scoreboard();
 
-/* problems: it returns the same message after every round
-             it doesn't seem to update computerchoice
-             scoreboard function and the score variables don't work*/
+}
+console.log(game());
