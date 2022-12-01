@@ -23,7 +23,7 @@ let compScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase ();
-    if (playerSelection === "stone" && computerSelection == "paper") {
+    if (playerSelection === "stone" && computerSelection === "paper") {
         compScore++;
         return "You Lose! Paper beats Stone";
     } else if (playerSelection === "stone" && computerSelection === "scissors") {
@@ -45,6 +45,9 @@ function playRound(playerSelection, computerSelection) {
         return "Nobody wins!";
     }
 }
+
+ console.log ()
+/*
 function scoreboard() {
     if (playerScore > compScore) {
         return "You won!";
@@ -63,7 +66,7 @@ function game() {
     }
     scoreboard();
 }
-console.log(game());
+console.log(game());*/
    
 
 /* problems: it returns the same message after every round
