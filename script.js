@@ -46,8 +46,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
- console.log ()
-/*
+
 function scoreboard() {
     if (playerScore > compScore) {
         return "You won!";
@@ -66,7 +65,7 @@ function game() {
     }
     scoreboard();
 }
-console.log(game());*/
+console.log(game());
    
 
 /* problems: it returns the same message after every round
