@@ -46,9 +46,34 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+const paperButton = document.querySelector('paper-button')
+const scissorsButton = document.querySelector('.scissors-button')
+const stoneButton = document.querySelector('.stone-button')
+const outcomeDiv = document.querySelector('.outcome')
+
+paperButton.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "paper";
+    playRound (playerSelection, computerSelection);
+
+})
+
+scissorsButton.addEventListener('click', ()=> {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "scissors";
+    playRound (playerSelection, computerSelection);
+} )
+
+stoneButton.addEventListener('click', ()=> {
+    const computerSelection = getComputerChoice();
+    const playerSelection = "stone";
+    playRound (playerSelection, computerSelection);
+})
+
 console.log(playRound (playerSelection, computerSelection));
 
-function scoreboard() {
+/*function scoreboard() {
     if (playerScore > compScore) {
         return "You won!";
     } else if (playerScore < compScore) {
@@ -68,4 +93,4 @@ function game() {
     return scoreboard();
 
 }
-console.log(game());
+console.log(game());*/
