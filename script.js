@@ -10,10 +10,10 @@ function getComputerChoice() {
     } return choice;
 }
 
-function getPlayerChoice() {
+/*function getPlayerChoice() {
     let input = prompt("What is your move? Paper, Scissors, or Stone?");
     return input;
-}
+}*/
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
@@ -22,27 +22,42 @@ let playerScore = 0;
 let compScore = 0;
 
 function playRound(playerSelection, computerSelection) {
+    const outcomeDiv = document.querySelector('.outcome')
     playerSelection = playerSelection.toLowerCase ();
     if (playerSelection === "stone" && computerSelection === "paper") {
         compScore++;
-        return "You Lose! Paper beats Stone";
+        const p = document.createElement('p')
+        p.innerText= "You Lose! Paper beats Stone";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === "stone" && computerSelection === "scissors") {
         playerScore++;
-        return "You Win! Stone beats Scissors";
+        const p = document.createElement('p')
+        p.innerText= "You Win! Stone beats Scissors";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === "paper" && computerSelection === "stone") {
         playerScore++;
-        return "You Win! Paper beats Stone";
+        const p = document.createElement('p')
+        p.innerText= "You Win! Paper beats Stone";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         compScore++;
-        return "You Lose! Scissors beats Paper";
+        const p = document.createElement('p')
+        p.innerText= "You Lose! Scissors beats Paper";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === "scissors" && computerSelection === "stone") {
         compScore++;
-        return "You Lose! Stone beats Scissors";  
+        const p = document.createElement('p')
+        p.innerText= "You Lose! Stone beats Scissors"; 
+        outcomeDiv.appendChild(p); 
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
-        return "You Win! Scissors beats Paper";
+        const p = document.createElement('p')
+        p.innerText= "You Win! Scissors beats Paper";
+        outcomeDiv.appendChild(p);
     } else if (playerSelection === computerSelection) {
-        return "Nobody wins!";
+        const p = document.createElement('p')
+        p.innerText= "Nobody wins!";
+        outcomeDiv.appendChild(p);
     }
 }
 
@@ -50,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
 const paperButton = document.querySelector('paper-button')
 const scissorsButton = document.querySelector('.scissors-button')
 const stoneButton = document.querySelector('.stone-button')
-const outcomeDiv = document.querySelector('.outcome')
+
 
 paperButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
