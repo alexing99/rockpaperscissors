@@ -15,8 +15,8 @@ function getPlayerChoice() {
     return input;
 }
 
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
 
 let playerScore = 0;
 let compScore = 0;
