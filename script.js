@@ -18,52 +18,33 @@ let computerSelection = '';
 let playerSelection = '';
 let playerScore = 0;
 let compScore = 0;
-
+const outcomeDiv = document.querySelector('.outcome')
 function playRound(playerSelection, computerSelection) {
-    const outcomeDiv = document.querySelector('.outcome')
+    const p = document.createElement('p')
     playerSelection = playerSelection.toLowerCase ();
     if (playerSelection === "stone" && computerSelection === "paper") {
         compScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Lose! Paper beats Stone";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `You Lose! Paper beats Stone.       You: ${playerScore} Computer: ${compScore}`;
     } else if (playerSelection === "stone" && computerSelection === "scissors") {
         playerScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Win! Stone beats Scissors";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `You Win! Stone beats Scissors.     You: ${playerScore} Computer: ${compScore}`;
     } else if (playerSelection === "paper" && computerSelection === "stone") {
         playerScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Win! Paper beats Stone";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `You Win! Paper beats Stone.        You: ${playerScore} Computer: ${compScore}`;
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         compScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Lose! Scissors beats Paper";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `You Lose! Scissors beats Paper.    You: ${playerScore} Computer: ${compScore}`;
     } else if (playerSelection === "scissors" && computerSelection === "stone") {
         compScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Lose! Stone beats Scissors"; 
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p); 
+        p.innerText= `You Lose! Stone beats Scissors.    You: ${playerScore} Computer: ${compScore}`; 
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
-        const p = document.createElement('p')
-        p.innerText= "You Win! Scissors beats Paper";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `You Win! Scissors beats Paper.     You: ${playerScore} Computer: ${compScore}`;
     } else if (playerSelection === computerSelection) {
-        const p = document.createElement('p')
-        p.innerText= "Nobody wins!";
-        outcomeDiv.removeChild(p);
-        outcomeDiv.appendChild(p);
+        p.innerText= `Nobody wins!      You: ${playerScore} Computer: ${compScore}`;
+        
     }
+  outcomeDiv.appendChild(p);
 }
 
 
@@ -77,32 +58,36 @@ paperButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     const playerSelection = "paper";
     playRound (playerSelection, computerSelection);
+    checkForWinner (playerScore, compScore);
 })
 
 scissorsButton.addEventListener('click', ()=> {
     const computerSelection = getComputerChoice();
     const playerSelection = "scissors";
     playRound (playerSelection, computerSelection);
+    checkForWinner (playerScore, compScore);
 } )
 
 stoneButton.addEventListener('click', ()=> {
     const computerSelection = getComputerChoice();
     const playerSelection = "stone";
     playRound (playerSelection, computerSelection);
+    checkForWinner (playerScore, compScore);
 })
 
 
-/*function scoreboard() {
-    if (playerScore > compScore) {
-        return "You won!";
-    } else if (playerScore < compScore) {
-        return "You lose!";
-    } else {
-        return "Nobody wins!";
+const checkForWinner = (playerScore, compScore) => {
+    const h2 = document.createElement('h2')
+    if (playerScore === 5) {
+        h2.innerText = `You won 5 games! and the computer won ${compScore} games`;
+    } else if (compScore === 5) {
+        h2.innerText = `You lost! The computer won 5 games and you won ${playerScore} games`;
+        
     }
+    outcomeDiv.appendChild(h2);
 }
 
-function game() {
+/*function game() {
     for (let i = 1; i < 5; i++) {
        let playerSelection = getPlayerChoice();
        let computerSelection = getComputerChoice();
@@ -111,5 +96,4 @@ function game() {
     }
     return scoreboard();
 
-}
 console.log(game());*/
