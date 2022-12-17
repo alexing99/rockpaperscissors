@@ -10,10 +10,7 @@ function getComputerChoice() {
     } return choice;
 }
 
-/*function getPlayerChoice() {
-    let input = prompt("What is your move? Paper, Scissors, or Stone?");
-    return input;
-}*/
+
 let computerSelection = '';
 let playerSelection = '';
 let playerScore = 0;
@@ -86,14 +83,3 @@ const checkForWinner = (playerScore, compScore) => {
     }
     outcomeDiv.appendChild(h2);
 }
-
-/*function game() {
-    for (let i = 1; i < 5; i++) {
-       let playerSelection = getPlayerChoice();
-       let computerSelection = getComputerChoice();
-       playRound(playerSelection, computerSelection);
-       console.log(playRound (playerSelection, computerSelection));
-    }
-    return scoreboard();
-
-console.log(game());*/
